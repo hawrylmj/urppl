@@ -1,14 +1,40 @@
 @import "bootstrap/bootstrap.less";
 //@import "font-awesome/font-awesome.less";
- 
-@import "bootstrap/variables.less";
+@import "customVariables.less";
 @import "bootstrap/mixins.less";
 @import "bootstrap/navs.less";
-
+@import "bootstrap/glyphicons.less";
 body {
   min-height: 2000px;
 }
 
 .navbar-static-top {
   margin-bottom: 19px;
+}
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.example li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ol.example li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+/*.list{
+	width:300px;
+	float:left;
+	margin: 25px;
+}*/
+.title{
+	background-color: @brand-primary;
+	color:@brand-text;
 }
