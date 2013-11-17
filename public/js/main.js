@@ -4,6 +4,12 @@ $(document).ready(function(){
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
+  $('.list-group li').click(function(){
+     console.log("test");
+  });
+  $('.plus').click(function(){
+     console.log("test");
+  });
 });
 
 var adjustment
@@ -42,4 +48,5 @@ $("ul.simple_with_animation").sortable({
       top: position.top - adjustment.top
     })
   }
+  
 })
