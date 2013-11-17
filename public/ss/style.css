@@ -6040,9 +6040,7 @@ ol.example li.placeholder:before {
 }
 @font-face {
   font-family: sanserifing;
-  src: url('/fonts/Sansserifing.ttf'), url('/fonts/Sansserifing.ttf');
-  
-  /* IE9 */
+  src: url('../fonts/Sanserifing.ttf');
 }
 .navbar-brand-lower {
   font-family: 'sanserifing', Sans-Serif;
