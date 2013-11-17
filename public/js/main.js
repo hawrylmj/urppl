@@ -10,6 +10,7 @@ $(document).ready(function(){
   $('.plus').click(function(){
      console.log("test");
   });
+  $('#myModal').modal(options)
 });
 
 var adjustment
@@ -50,4 +51,4 @@ $("ul.simple_with_animation").sortable({
     })
   }
   
-})
+});
