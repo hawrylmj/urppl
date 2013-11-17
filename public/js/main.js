@@ -8,9 +8,12 @@ $(document).ready(function(){
      console.log("test");
   });
   $('.plus').click(function(){
+     $('#myModal').modal('toggle');
+  });
+  $('.more').click(function(){
      console.log("test");
   });
-  $('#myModal').modal(options)
+  
 });
 
 var adjustment
@@ -18,7 +21,7 @@ var adjustment
 $("ul.simple_with_animation").sortable({
   group: 'simple_with_animation',
   pullPlaceholder: false,
-  exclude: '.title, .list-footer',
+  exclude: '.title, .list-footer, .plus, .more',
   // animation on drop
   onDrop: function  (item, targetContainer, _super) {
     var clonedItem = $('<li/>').css({height: 0})
