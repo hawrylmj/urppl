@@ -23,7 +23,7 @@
 
   module.exports = function(app) {
     app.get('/teams', function(request, response) {
-      return response.status(500);
+      return response.send(500, '');
     });
     app.get('/teams/:id', function(request, response) {
       var e, teamId;
@@ -38,11 +38,11 @@
             return response.send(toJSON(team));
           });
         } else {
-          return response.status(403);
+          return response.send(403, '');
         }
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     app.post('/teams', function(request, response) {
@@ -58,13 +58,13 @@
             if (!err) {
               return response.send(records[0]._id.$oid);
             } else {
-              return response.status(500);
+              return response.send(500, '');
             }
           });
         });
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     app.put('/teams/:id', function(request, response) {
@@ -78,14 +78,14 @@
             db.collection('teams').update({
               _id: ObjectID(teamId)
             }, team);
-            return response.status(200);
+            return response.send(200, '');
           });
         } else {
-          return response.status(403);
+          return response.send(403, '');
         }
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     return app["delete"]('/users/:id', function(request, response) {
@@ -99,11 +99,11 @@
             });
           });
         } else {
-          return response.status(403);
+          return response.send(403, '');
         }
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
   };

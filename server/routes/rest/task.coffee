@@ -34,7 +34,7 @@ hasAccess = (userId, taskId) ->
 
 module.exports = (app) ->
 	app.get '/tasks', (request, response) ->
-		response.status(500)
+		response.send(500, '')
 
 	app.get '/tasks/:id', (request, response) ->
 		try
@@ -45,9 +45,9 @@ module.exports = (app) ->
 					[task] = db.collection('tasks').find({ _id: ObjectID(id) })
 					response.send(toJSON(task))
 			else
-				response.status(403)
+				response.send(403, '')
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.post '/tasks', (request, response) ->
 		try
@@ -58,10 +58,10 @@ module.exports = (app) ->
 					if not err
 						response.send(records[0]._id.$oid)
 					else
-						response.status(500)
+						response.send(500, '')
 
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.put '/tasks/:id', (request, response) ->
 		try
@@ -70,12 +70,12 @@ module.exports = (app) ->
 				task = fromJSON(request.body)
 				wrapper (db) ->
 					db.collection('tasks').update({ _id: ObjectID(taskId) }, task)
-					response.status(200)
+					response.send(200, '')
 			else
-				response.status(403)
+				response.send(403, '')
 
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.delete '/tasks/:id', (request, response) ->
 		try
@@ -85,7 +85,7 @@ module.exports = (app) ->
 				wrapper (db) ->
 					db.collection('tasks').remove({ _id: ObjectID(taskId) })
 			else
-				response.status(403)
+				response.send(403, '')
 
 		catch e
-			response.status(500)
+			response.send(500, '')

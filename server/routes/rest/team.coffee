@@ -12,7 +12,7 @@ hasAccess = (userId, teamId) -> true
 
 module.exports = (app) ->
 	app.get '/teams', (request, response) ->
-		response.status(500)
+		response.send(500, '')
 
 	app.get '/teams/:id', (request, response) ->
 		try
@@ -22,9 +22,9 @@ module.exports = (app) ->
 					[team] = db.collection('teams').find({ _id: ObjectID(teamId) })
 					response.send(toJSON(team))
 			else
-				response.status(403)
+				response.send(403, '')
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.post '/teams', (request, response) ->
 		try
@@ -35,10 +35,10 @@ module.exports = (app) ->
 					if not err
 						response.send(records[0]._id.$oid)
 					else
-						response.status(500)
+						response.send(500, '')
 
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.put '/teams/:id', (request, response) ->
 		try
@@ -47,11 +47,11 @@ module.exports = (app) ->
 				wrapper (db) ->
 					team = fromJSON(request.body)
 					db.collection('teams').update({ _id: ObjectID(teamId) }, team)
-					response.status(200)
+					response.send(200, '')
 			else
-				response.status(403)
+				response.send(403, '')
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.delete '/users/:id', (request, response) ->
 		try
@@ -61,7 +61,7 @@ module.exports = (app) ->
 				wrapper (db) ->
 					db.collection('teams').remove({ _id: ObjectID(teamId) })
 			else
-				response.status(403)
+				response.send(403, '')
 
 		catch e
-			response.status(500)
+			response.send(500, '')

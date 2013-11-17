@@ -8,12 +8,14 @@
     return mongo.Db.connect(process.env.MONGOLAB_URI, function(err, db) {
       var e;
       if (err) {
+        console.log('Error connecting to DB: ' + err);
         throw err;
       }
       try {
         return fn(db);
       } catch (_error) {
         e = _error;
+        console.log('Error caught while executing wrapper: ' + e);
         throw e;
       } finally {
         db.close();

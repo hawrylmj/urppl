@@ -68,7 +68,7 @@
 
   module.exports = function(app) {
     app.get('/tasks', function(request, response) {
-      return response.status(500);
+      return response.send(500, '');
     });
     app.get('/tasks/:id', function(request, response) {
       var e, id;
@@ -83,11 +83,11 @@
             return response.send(toJSON(task));
           });
         } else {
-          return response.status(403);
+          return response.send(403, '');
         }
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     app.post('/tasks', function(request, response) {
@@ -103,13 +103,13 @@
             if (!err) {
               return response.send(records[0]._id.$oid);
             } else {
-              return response.status(500);
+              return response.send(500, '');
             }
           });
         });
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     app.put('/tasks/:id', function(request, response) {
@@ -122,14 +122,14 @@
             db.collection('tasks').update({
               _id: ObjectID(taskId)
             }, task);
-            return response.status(200);
+            return response.send(200, '');
           });
         } else {
-          return response.status(403);
+          return response.send(403, '');
         }
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     return app["delete"]('/tasks/:id', function(request, response) {
@@ -143,11 +143,11 @@
             });
           });
         } else {
-          return response.status(403);
+          return response.send(403, '');
         }
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
   };
