@@ -59,7 +59,7 @@
         return wrapper(function(db) {
           var collection, id, teams, user;
           id = request.params.id;
-          collection = db.collection('users');
+          collection = db.collection('teams');
           teams = collection.find({
             users: {
               $all: [request.session.userId, id]

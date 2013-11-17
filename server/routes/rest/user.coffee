@@ -39,7 +39,7 @@ module.exports = (app) ->
 		try
 			wrapper (db) ->
 				id = request.params.id
-				collection = db.collection('users')
+				collection = db.collection('teams')
 				teams = collection.find({ users: { $all: [request.session.userId, id] } })
 
 				if teams.length > 0
