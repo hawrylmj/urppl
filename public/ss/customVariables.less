@@ -17,10 +17,16 @@
 
 // Brand colors
 // -------------------------
+@brand-darkpurple:			#343855;
+@brand-purple:			#8563ab;
+@brand-teal:			#5dadb1;
+@brand-orange:			#ebaf60;	
+@brand-text-background:	#FFFFFF;	
 
-@brand-primary:         purple;
+@backdrop:				@brand-purple;
+@brand-primary:         #428bca;
 @brand-text:			white;
-@brand-success:         #5cb85c;
+@brand-success:         @brand-teal;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 @brand-info:            #5bc0de;
@@ -34,7 +40,8 @@
 // Links
 // -------------------------
 
-@link-color:            @brand-primary;
+@link-color:            @gray;
+@glyphlink:				white;
 @link-hover-color:      darken(@link-color, 15%);
 
 // Typography
@@ -43,8 +50,7 @@
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
-
+@font-family-base:        @font-family-sans-serif;	  
 @font-size-base:          14px;
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
@@ -261,12 +267,12 @@
 @navbar-padding-horizontal:        floor(@grid-gutter-width / 2);
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
-@navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-color:             white;
+@navbar-default-bg:                @brand-purple;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
-@navbar-default-link-color:                #777;
+@navbar-default-link-color:                @brand-text-background;
 @navbar-default-link-hover-color:          #333;
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #555;
@@ -636,3 +642,9 @@
 // Large screen / wide desktop
 @container-large-desktop:      ((1140px + @grid-gutter-width));
 @container-lg:                 @container-large-desktop;
+// list variables
+// --------------------------------------------------
+@vertical-Offset:					7px;
+@horizontal-Offset:					10px;
+@breaker-height:					20px;
+	

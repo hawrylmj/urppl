@@ -4,10 +4,20 @@
 @import "bootstrap/mixins.less";
 @import "bootstrap/navs.less";
 @import "bootstrap/glyphicons.less";
+
 body {
-  min-height: 2000px;
+  overflow-x: hidden;
+}
+#logo{
+	height: 55px;
+	margin-right: 25px;
 }
 
+.list{
+	width:300px;
+	margin: 15px;
+	float:left;
+}
 .navbar-static-top {
   margin-bottom: 19px;
 }
@@ -34,7 +44,54 @@ ol.example li.placeholder:before {
 	float:left;
 	margin: 25px;
 }*/
+.list-group-item{
+	padding: 10px;
+}
 .title{
-	background-color: @brand-primary;
+	background-color: @backdrop;
 	color:@brand-text;
+}
+.breaker{
+	height:@breaker-height;
+}
+.left-top{
+	position: absolute;
+	left:@vertical-Offset;
+	top:@horizontal-Offset;
+}
+.right-top{
+	position: absolute;
+	right:@vertical-Offset;
+	top:@horizontal-Offset;
+}
+.left-bottom{
+	.right-bottom{
+	position: absolute;
+	left:@vertical-Offset;
+	bottom:@horizontal-Offset;
+}
+}
+.right-bottom{
+	position: absolute;
+	right:@vertical-Offset;
+	bottom:@horizontal-Offset;
+}
+.plus{
+	position: absolute;
+	right:@vertical-Offset;
+	top:@horizontal-Offset;
+	color:@glyphlink;
+	font-size:150%;
+}
+.login{
+	position: relative;
+	top:@vertical-Offset;
+}
+@font-face{
+	font-family: sanserifing;
+	src: url('/fonts/Sansserifing.ttf'),
+     url('/fonts/Sansserifing.ttf'); /* IE9 */
+}
+.navbar-brand-lower{
+	font-family: 'sanserifing', Sans-Serif;
 }
