@@ -18,6 +18,7 @@ $("ul.simple_with_animation").sortable({
   group: 'simple_with_animation',
   pullPlaceholder: false,
   exclude:'.title',
+  exclude:'.list-footer',
   // animation on drop
   onDrop: function  (item, targetContainer, _super) {
     var clonedItem = $('<li/>').css({height: 0})
