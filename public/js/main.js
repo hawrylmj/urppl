@@ -4,14 +4,16 @@ $(document).ready(function(){
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
-  $('.list-group li').click(function(){
+  /*$('.list-group li').click(function(){
      console.log("test");
-  });
+  });*/
   $('.plus').click(function(){
      $('#myModal').modal('toggle');
   });
   $('.more').click(function(){
      console.log("test");
+    $('.more').siblings().removeClass('hidden');
+    //this.closest('li').toggleClass('hidden');
   });
   
 });
