@@ -4,6 +4,7 @@
 @import "bootstrap/mixins.less";
 @import "bootstrap/navs.less";
 @import "bootstrap/glyphicons.less";
+@import "modernbuisness.less";
 
 body {
   overflow-x: hidden;
@@ -12,8 +13,10 @@ body {
 	margin-top: 6px;
 	margin-right: 25px;
 }
+.navbar{
+	margin-bottom: 0px;
+}
 .navbar-static-top {
-  margin-bottom: 19px;
 }
 body.dragging, body.dragging * {
   cursor: move !important;
@@ -73,13 +76,8 @@ ol.example li.placeholder:before {
 	position: relative;
 	top:@vertical-Offset;
 }
-
-@font-face{
-	font-family: sanserifing;
-	src: url('../fonts/Sanserifing.ttf');
-}
-.navbar-brand-lower{
-	font-family: 'sanserifing', Sans-Serif;
+.row{
+	margin-top: 50px;
 }
 .list-footer{
 	text-align: center;
@@ -90,3 +88,5 @@ ol.example li.placeholder:before {
 	right: -6px;
 	box-shadow: -3px 3px 6px #ccc;
 }
+
+

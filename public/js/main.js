@@ -1,16 +1,30 @@
 $(document).ready(function(){
+  // Activates the Carousel
+  $('.carousel').carousel({
+    interval: 5000
+  })
+
+  // Activates Tooltips for Social Links
+  $('.tooltip-social').tooltip({
+    selector: "a[data-toggle=tooltip]"
+  })
   $("ul.example").sortable()
   $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
-  $('.list-group li').click(function(){
+  /*$('.list-group li').click(function(){
      console.log("test");
-  });
+  });*/
   $('.plus').click(function(){
-     console.log("test");
+     $('#myModal').modal('toggle');
   });
-  $('#myModal').modal(options)
+  $('.more').click(function(){
+     console.log("test");
+    $('.more').siblings().removeClass('hidden');
+    //this.closest('li').toggleClass('hidden');
+  });
+  
 });
 
 var adjustment
@@ -18,7 +32,7 @@ var adjustment
 $("ul.simple_with_animation").sortable({
   group: 'simple_with_animation',
   pullPlaceholder: false,
-  exclude: '.title, .list-footer',
+  exclude: '.title, .list-footer, .plus, .more',
   // animation on drop
   onDrop: function  (item, targetContainer, _super) {
     var clonedItem = $('<li/>').css({height: 0})
