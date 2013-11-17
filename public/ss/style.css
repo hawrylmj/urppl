@@ -5978,13 +5978,8 @@ body {
   overflow-x: hidden;
 }
 #logo {
-  height: 55px;
+  margin-top: 6px;
   margin-right: 25px;
-}
-.list {
-  width: 300px;
-  margin: 15px;
-  float: left;
 }
 .navbar-static-top {
   margin-bottom: 19px;
@@ -6005,14 +6000,6 @@ ol.example li.placeholder {
 ol.example li.placeholder:before {
   position: absolute;
   /** Define arrowhead **/
-}
-/*.list{
-	width:300px;
-	float:left;
-	margin: 25px;
-}*/
-.list-group-item {
-  padding: 10px;
 }
 .title {
   background-color: #8563ab;
@@ -6046,7 +6033,6 @@ ol.example li.placeholder:before {
   right: 7px;
   top: 10px;
   color: #ffffff;
-  font-size: 150%;
 }
 .login {
   position: relative;
@@ -6054,10 +6040,11 @@ ol.example li.placeholder:before {
 }
 @font-face {
   font-family: sanserifing;
-  src: url('/fonts/Sansserifing.ttf'), url('/fonts/Sansserifing.ttf');
-  
-  /* IE9 */
+  src: url('../fonts/Sanserifing.ttf');
 }
 .navbar-brand-lower {
   font-family: 'sanserifing', Sans-Serif;
+}
+.list-footer {
+  text-align: center;
 }
