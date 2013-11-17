@@ -30,10 +30,10 @@ module.exports = (app) ->
 				else
 					response.send(null)
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.get '/users', (request, response) ->
-		response.status(500)
+		response.send(500, '')
 
 	app.get '/users/:id', (request, response) ->
 		try
@@ -48,12 +48,12 @@ module.exports = (app) ->
 					if user
 						response.send(toJSON(user))
 					else
-						response.status(404)
+						response.send(404, '')
 
 				else
-					response.status(403)
+					response.send(403, '')
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.post '/users', (request, response) ->
 		try
@@ -64,17 +64,17 @@ module.exports = (app) ->
 					if not err
 						response.send(records[0]._id.$oid)
 					else
-						response.status(500)
+						response.send(500, '')
 
 		catch e
-			response.status(500)
+			response.send(500, '')
 
 	app.put '/users/:id', (request, response) ->
 		try
 			wrapper (db) ->
 				id = request.params.id
 				if request.session.id isnt id
-					response.status(403)
+					response.send(403)
 					return
 
 				user = fromJSON(request.body)
@@ -82,6 +82,6 @@ module.exports = (app) ->
 				collection.update { _id: ObjectID(request.session.id) }, user
 
 		catch e
-			response.status(500)
+			response.send(500, '')
 
-	app.delete '/users/:id', (request, response) -> response.status(403)
+	app.delete '/users/:id', (request, response) -> response.send(403, '')

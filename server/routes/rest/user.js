@@ -47,11 +47,11 @@
         });
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     app.get('/users', function(request, response) {
-      return response.status(500);
+      return response.send(500, '');
     });
     app.get('/users/:id', function(request, response) {
       var e;
@@ -72,15 +72,15 @@
             if (user) {
               return response.send(toJSON(user));
             } else {
-              return response.status(404);
+              return response.send(404, '');
             }
           } else {
-            return response.status(403);
+            return response.send(403, '');
           }
         });
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     app.post('/users', function(request, response) {
@@ -96,13 +96,13 @@
             if (!err) {
               return response.send(records[0]._id.$oid);
             } else {
-              return response.status(500);
+              return response.send(500, '');
             }
           });
         });
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     app.put('/users/:id', function(request, response) {
@@ -112,7 +112,7 @@
           var collection, id, user;
           id = request.params.id;
           if (request.session.id !== id) {
-            response.status(403);
+            response.send(403);
             return;
           }
           user = fromJSON(request.body);
@@ -123,11 +123,11 @@
         });
       } catch (_error) {
         e = _error;
-        return response.status(500);
+        return response.send(500, '');
       }
     });
     return app["delete"]('/users/:id', function(request, response) {
-      return response.status(403);
+      return response.send(403, '');
     });
   };
 
