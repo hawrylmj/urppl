@@ -1,5 +1,5 @@
-wrapper = require('mongo_wrapper')
-ObjectID = requre('mongodb').ObjectID
+wrapper = require('./mongo_wrapper')
+ObjectID = require('mongodb').ObjectID
 
 fromJSON = (json) -> json
 

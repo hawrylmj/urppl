@@ -17,6 +17,10 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+require('./server/routes/rest/user')(app);
+require('./server/routes/rest/team')(app);
+require('./server/routes/rest/task')(app);
+
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }

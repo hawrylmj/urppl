@@ -1,6 +1,6 @@
-wrapper = require('mongo_wrapper')
+wrapper = require('./mongo_wrapper')
 crypto = require('crypto')
-ObjectID = requre('mongodb').ObjectID
+ObjectID = require('mongodb').ObjectID
 
 SHA256 = (text) -> crypto.createHash('sha256').update(text).digest('hex')
 

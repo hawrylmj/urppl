@@ -2,9 +2,9 @@
 (function() {
   var ObjectID, fromJSON, hasAccess, toJSON, wrapper;
 
-  wrapper = require('mongo_wrapper');
+  wrapper = require('./mongo_wrapper');
 
-  ObjectID = requre('mongodb').ObjectID;
+  ObjectID = require('mongodb').ObjectID;
 
   fromJSON = function(json) {
     return json;
