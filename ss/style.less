@@ -1,0 +1,98 @@
+@import "bootstrap/bootstrap.less";
+//@import "font-awesome/font-awesome.less";
+@import "customVariables.less";
+@import "bootstrap/mixins.less";
+@import "bootstrap/navs.less";
+@import "bootstrap/glyphicons.less";
+@import "modernbuisness.less";
+
+body {
+  overflow-x: hidden;
+}
+#logo{
+	margin-top: 6px;
+	margin-right: 25px;
+}
+.navbar{
+	margin-bottom: 0px;
+}
+.navbar-static-top {
+}
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.example li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ol.example li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+
+.title{
+	background-color: @backdrop;
+	color:@brand-text;
+}
+.breaker{
+	height:@breaker-height;
+}
+.left-top{
+	position: absolute;
+	left:@vertical-Offset;
+	top:@horizontal-Offset;
+}
+.right-top{
+	position: absolute;
+	right:@vertical-Offset;
+	top:@horizontal-Offset;
+}
+.blurb img{
+	height:150px;
+}
+.blurb{
+	text-align:center;
+}
+.left-bottom{
+	.right-bottom{
+	position: absolute;
+	left:@vertical-Offset;
+	bottom:@horizontal-Offset;
+}
+}
+.right-bottom{
+	position: absolute;
+	right:@vertical-Offset;
+	bottom:@horizontal-Offset;
+}
+.plus{
+	position: absolute;
+	right:@vertical-Offset;
+	top:@horizontal-Offset;
+	color:@glyphlink;
+}
+.login{
+	position: relative;
+	top:@vertical-Offset;
+}
+.row{
+	margin-top: 50px;
+}
+.list-footer{
+	text-align: center;
+}
+
+.moved {
+	top: -6px;
+	right: -6px;
+	box-shadow: -3px 3px 6px #ccc;
+}
+
+
